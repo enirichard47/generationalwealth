@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>GENERATIONAL WEALTH | $GW 👑</title>
+    <meta name="description" content="Generational Wealth is more than a token, it's a movement for those who believe in long-term prosperity, financial freedom, and creating wealth that lasts beyond a lifetime.">
+    <link rel="icon" type="image/png" href="images/gen.jpg">
+    <link rel="apple-touch-icon" href="images/gen.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Swiper CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #E5A93B; /* Radiant Amber-Gold */
+            --secondary: #B8860B; /* Dark Goldenrod */
+            --accent: #FFD700; /* Gold */
+            --dark: #0A0806; /* Dark Obsidian Black */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-meme {
+            font-family: 'Bungee', cursive;
+        }
+
+        /* Core Animations */
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(229, 169, 59, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(229, 169, 59, 0.6);
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .bg-meme-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Lightbox logic */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Nav Link Effects */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .bg-dark {
+            background-color: #050403 !important;
+        }
+
+        [data-typewriter] {
+            white-space: pre-wrap;
+            display: inline-block;
+            min-height: 1.5em;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-[#E5A93B] selection:text-black overflow-x-hidden relative min-h-screen w-full">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        class="fixed inset-0 bg-[#0A0806] z-[100] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
+        <div class="relative flex items-center justify-center mb-8">
+            <!-- Elegant SVG Ring -->
+            <svg class="w-48 h-48 animate-[spin_4s_linear_infinite]" viewBox="0 0 100 100">
+                <circle class="text-white/5" stroke-width="2" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" />
+                <circle class="text-[#E5A93B] transition-all duration-500 ease-out" stroke-width="2" 
+                    stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" stroke="currentColor" 
+                    fill="transparent" r="45" cx="50" cy="50" />
+            </svg>
+            <img src="images/gen.jpg" alt="Loading"
+                class="absolute w-32 h-32 rounded-full border-2 border-white/10 shadow-[0_0_50px_rgba(229,169,59,0.3)] object-cover">
+        </div>
+        <div class="overflow-hidden">
+            <h2 id="preloader-text"
+                class="text-sm sm:text-base font-bold text-white tracking-[0.5em] uppercase text-center px-4 opacity-0 transform translate-y-4">
+                GENERATIONAL WEALTH INITIALIZING...</h2>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-3xl px-6 py-4">
+            <div class="flex items-center gap-3">
+                <img src="images/gen.jpg" alt="GENERATIONAL WEALTH Logo"
+                    class="w-12 h-12 rounded-full border-2 border-[#E5A93B] shadow-[0_0_15px_rgba(229,169,59,0.5)] object-cover">
+                <span class="text-2xl font-meme tracking-tighter hidden md:block uppercase">GEN WEALTH 👑</span>
+            </div>
+            <div class="hidden lg:flex gap-6 font-bold uppercase text-xs tracking-widest">
+                <a href="#about" class="nav-link text-white hover:text-[#E5A93B] transition-colors">Lore</a>
+                <a href="#chart" class="nav-link text-white hover:text-[#E5A93B] transition-colors">Status</a>
+                <a href="#mechanics" class="nav-link text-white hover:text-[#E5A93B] transition-colors">Specs</a>
+                <a href="#buy" class="nav-link text-white hover:text-[#E5A93B] transition-colors">Acquisition</a>
+                <a href="#roadmap" class="nav-link text-white hover:text-[#E5A93B] transition-colors">Timeline</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/generationall_wealth" target="_blank"
+                    class="bg-meme-gradient text-black px-6 py-2 rounded-full font-meme text-sm hover:scale-105 transition-transform shadow-xl hidden sm:block">
+                    JOIN MOVEMENT 👑
+                </a>
+                <!-- Hamburger Button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden text-white hover:text-[#E5A93B] focus:outline-none p-2 rounded-lg bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black/95 z-[100] hidden flex-col items-center justify-center gap-8 backdrop-blur-xl transition-opacity opacity-0">
+        <button id="mobile-menu-close"
+            class="absolute top-8 right-8 text-white hover:text-[#E5A93B] bg-white/10 p-3 rounded-full transition-all hover:scale-110">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="#about"
+            class="mobile-nav-link text-3xl font-meme text-white hover:text-[#E5A93B] transition-colors uppercase">Lore</a>
+        <a href="#chart"
+            class="mobile-nav-link text-3xl font-meme text-white hover:text-[#E5A93B] transition-colors uppercase">Status</a>
+        <a href="#mechanics"
+            class="mobile-nav-link text-3xl font-meme text-white hover:text-[#E5A93B] transition-colors uppercase">Specs</a>
+        <a href="#buy"
+            class="mobile-nav-link text-3xl font-meme text-white hover:text-[#E5A93B] transition-colors uppercase">Acquisition</a>
+        <a href="#roadmap"
+            class="mobile-nav-link text-3xl font-meme text-white hover:text-[#E5A93B] transition-colors uppercase">Timeline</a>
+        <a href="https://t.me/generationall_wealth" target="_blank"
+            class="bg-meme-gradient text-black px-8 py-4 rounded-full font-meme text-xl shadow-xl mt-4 text-center hover:scale-105 transition-transform">
+            JOIN MOVEMENT 👑
+        </a>
+    </div>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#E5A93B]/10 via-transparent to-transparent">
+        </div>
+
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center z-10">
+            <div class="text-center lg:text-left">
+                <div
+                    class="inline-block bg-white/10 px-4 py-1 rounded-full text-[#E5A93B] font-bold text-sm mb-6 border border-[#E5A93B]/30 uppercase tracking-[0.2em]">
+                    👑 TON NETWORK ACTIVE
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-meme leading-none mb-6">
+                    GENERATIONAL <span class="text-[#E5A93B]">WEALTH</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed shadow-sm drop-shadow-md text-center lg:text-left">
+                    <span class="block mb-4 text-white font-bold text-2xl md:text-3xl tracking-tight">More than a token, it's a movement for those who believe in long-term prosperity. 👑</span>
+                    <span class="opacity-90 block mb-4 border-l-4 border-[#E5A93B] pl-4 py-1 text-left italic">Designed for long-term prosperity, financial freedom, and creating wealth that lasts beyond a lifetime.</span>
+                    While others chase short-term hype, bot-driven pumps, and rugpulls, we build a digital legacy that endures. Welcome to the elite circle of $GW holders.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="https://t.me/generationall_wealth" target="_blank">
+                        <button
+                            class="bg-[#E5A93B] text-black px-10 py-5 rounded-2xl font-meme text-xl hover:bg-white hover:text-black transition-all transform hover:-rotate-1 pulse-glow">JOIN
+                            MOVEMENT</button>
+                    </a>
+                    <button onclick="document.getElementById('chart').scrollIntoView({behavior: 'smooth'})"
+                        class="glass px-10 py-5 rounded-2xl font-meme text-xl hover:bg-white/10 transition-all transform hover:rotate-1">VIEW
+                        STATUS</button>
+                </div>
+                <div class="mt-8 flex flex-col items-center lg:items-start group max-w-full">
+                    <p class="text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest text-shadow">Contract Address (Click to Copy)</p>
+                    <pre class="bg-black/50 p-3 md:p-4 rounded-xl text-[#E5A93B] font-bold border border-[#E5A93B]/30 break-all whitespace-pre-wrap text-[0.65rem] md:text-base text-center select-all cursor-pointer hover:bg-[#E5A93B] hover:text-black transition-colors w-full"
+                        onclick="navigator.clipboard.writeText('EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo'); alert('Contract Address copied to clipboard!');">EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo</pre>
+                </div>
+            </div>
+            <div class="relative mt-12 lg:mt-0">
+                <div
+                    class="relative w-full aspect-square rotate-3 float overflow-hidden flex items-center justify-center filter drop-shadow-[0_0_40px_rgba(229,169,59,0.4)] bg-black/20 rounded-[4rem]">
+                    <img src="images/gen.jpg" alt="Generational Wealth Hero" class="object-cover w-full h-full rounded-[4rem] border-8 border-white/10">
+                </div>
+                <div
+                    class="absolute -top-10 right-0 sm:-right-10 bg-[#E5A93B] text-black px-4 py-3 sm:px-6 sm:py-4 rounded-3xl font-meme -rotate-12 shadow-2xl text-xl sm:text-2xl z-20 border-2 border-[#FFD700]">
+                    WEALTH CLUB</div>
+                <div
+                    class="absolute -bottom-6 left-0 sm:-left-6 bg-[#B8860B] text-white px-4 py-3 sm:px-6 sm:py-4 rounded-3xl font-meme rotate-6 shadow-2xl text-lg sm:text-xl z-20">
+                    NOT A TREND. A LEGACY. 👑</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT / LORE -->
+    <section id="about" class="py-24 bg-white text-black relative overflow-hidden">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 text-center md:text-left">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-meme leading-tight break-words">THE ROAD TO<br
+                        class="md:hidden"> <span class="text-[#E5A93B]">PERPETUAL WEALTH</span></h2>
+                <p class="text-xl font-medium opacity-80 leading-relaxed">
+                    The Generational Wealth ($GW) movement was created for those who look beyond the next candle. While others chase short-term hype, fake tokens, and bot-driven pumps, we build a legacy that lasts.
+                    <br><br>
+                    By launching on the TON blockchain, $GW is directly integrated into the Telegram ecosystem, putting financial freedom and long-term prosperity in the hands of hundreds of millions of users worldwide.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-3xl text-center border-2 border-black text-black">
+                        <div class="text-4xl mb-2">👑</div>
+                        <div class="font-meme">DECENTRALIZED</div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-3xl text-center border-2 border-black text-black">
+                        <div class="text-4xl mb-2">🔥</div>
+                        <div class="font-meme">UNSTOPPABLE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="flex flex-col sm:flex-row gap-8 sm:gap-4 py-8 px-4 justify-center items-center">
+                    <div
+                        class="w-full sm:min-w-[280px] sm:max-w-xs bg-black text-white p-8 rounded-[2rem] sm:-rotate-2 border border-white/10 shadow-2xl relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-[#E5A93B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="text-4xl mb-4 text-[#E5A93B]">👑</div>
+                        <h4 class="font-meme text-xl mb-2 text-[#E5A93B]">LEGACY CONVICTION</h4>
+                        <p class="text-sm opacity-70 relative z-10 transition-colors group-hover:text-white">Designed for holders who understand compound value and have the patience to build real, lasting wealth.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full sm:min-w-[280px] sm:max-w-xs bg-[#E5A93B] text-black p-8 rounded-[2rem] sm:rotate-3 shadow-2xl relative overflow-hidden group hover:scale-105 transition-transform">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tl from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="text-4xl mb-4 relative z-10">🛡️</div>
+                        <h4 class="font-meme text-xl mb-2 relative z-10 text-black">TON CONCURRENCY</h4>
+                        <p class="text-sm font-medium relative z-10">Leveraging TON's high-speed consensus and frictionless social integration to scale the movement globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LIVE CHART & STAT SHAPES -->
+    <section id="chart" class="py-24 bg-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-8xl font-meme mb-4">MOVEMENT STATUS</h2>
+                <p class="text-xl font-bold opacity-90 uppercase tracking-widest text-[#E5A93B]">Real-time system telemetry
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-4 gap-6 mb-12">
+                <div class="glass p-8 rounded-3xl border-b-4 border-[#E5A93B] hover:scale-105 transition-transform">
+                    <p class="text-xs uppercase tracking-tighter opacity-50 mb-2">Market Cap</p>
+                    <h3 id="stat-mcap" class="text-3xl font-meme text-[#E5A93B]">TBA</h3>
+                </div>
+                <div class="glass p-8 rounded-3xl border-b-4 border-[#FFD700] hover:scale-105 transition-transform">
+                    <p class="text-xs uppercase tracking-tighter opacity-50 mb-2">Price (USD)</p>
+                    <h3 id="stat-price" class="text-2xl font-meme text-[#FFD700]">AWAITING ACTIVATION</h3>
+                </div>
+                <div class="glass p-8 rounded-3xl border-b-4 border-[#E5A93B] hover:scale-105 transition-transform">
+                    <p class="text-xs uppercase tracking-tighter opacity-50 mb-2">Liquidity</p>
+                    <h3 id="stat-liquidity" class="text-2xl font-meme text-[#E5A93B]">100% LOCKED</h3>
+                </div>
+                <div class="glass p-8 rounded-3xl border-b-4 border-[#FFD700] hover:scale-105 transition-transform">
+                    <p class="text-xs uppercase tracking-tighter opacity-50 mb-2">24h Volume</p>
+                    <h3 id="stat-volume" class="text-2xl font-meme text-[#FFD700]">TBA</h3>
+                </div>
+            </div>
+
+            <!-- Custom Cyberpunk Terminal Container -->
+            <div class="glass rounded-[3rem] p-4 h-[600px] overflow-hidden border-2 border-white/10 shadow-2xl">
+                <div class="w-full h-full rounded-[2rem] bg-black/90 p-6 md:p-8 border border-[#E5A93B]/20 font-mono text-[#E5A93B] relative overflow-hidden flex flex-col justify-between">
+                    <!-- Scanline and screen flicker effects -->
+                    <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(229,169,59,0.03),rgba(229,169,59,0.01),rgba(229,169,59,0.03))] bg-[size:100%_4px,3px_100%] pointer-events-none z-20"></div>
+                    
+                    <div class="flex justify-between items-center border-b border-[#E5A93B]/20 pb-4 z-10">
+                        <div class="flex items-center gap-2">
+                            <button id="tab-chart-btn" class="text-[0.65rem] sm:text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded bg-[#E5A93B] text-black transition-colors focus:outline-none">
+                                📊 LIVE CHART
+                            </button>
+                            <button id="tab-terminal-btn" class="text-[0.65rem] sm:text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded text-[#E5A93B] hover:bg-white/5 transition-colors focus:outline-none">
+                                📟 SYSTEM TERMINAL
+                            </button>
+                        </div>
+                        <div class="text-xs opacity-60">SYS_TIME: <span id="system-time">2026-06-04 20:27:00</span></div>
+                    </div>
+
+                    <!-- Panel 1: Live Chart -->
+                    <div id="chart-panel" class="flex-1 mt-4 z-10 w-full h-[400px]">
+                        <iframe src="https://dexscreener.com/ton/EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo?embed=1&theme=dark&trades=0" class="w-full h-full border-0 rounded-[1.5rem]"></iframe>
+                    </div>
+
+                    <!-- Panel 2: System Terminal -->
+                    <div id="terminal-panel" class="hidden flex-1 mt-4 z-10 w-full h-[400px] flex-col justify-between">
+                        <div class="my-auto py-2 flex flex-col items-center text-center">
+                            <div class="text-5xl mb-4 select-none animate-pulse text-[#E5A93B]">👑</div>
+                            <h3 class="text-xl md:text-2xl font-bold uppercase tracking-widest text-[#FFD700] mb-2 font-meme">Protocol Activated</h3>
+                            <p class="max-w-md text-xs text-gray-400 leading-relaxed mb-4 font-sans">
+                                The Generational Wealth Protocol is active and trading on the TON mainnet.
+                            </p>
+                            <div class="w-full max-w-sm bg-black/40 border border-[#E5A93B]/20 rounded-xl p-4 text-left">
+                                <div class="text-xs text-[#E5A93B] mb-1"><span class="opacity-50">></span> STATUS: <span class="text-[#FFD700] animate-pulse">ACTIVE_STATE</span></div>
+                                <div class="text-xs text-[#E5A93B] mb-1"><span class="opacity-50">></span> NETWORK: TON_MAINNET</div>
+                                <div class="text-xs text-[#E5A93B] mb-1"><span class="opacity-50">></span> CURR_PRICE: <span id="term-price">SYNCING...</span></div>
+                                <div class="text-xs text-[#E5A93B] mb-1"><span class="opacity-50">></span> CURR_MCAP: <span id="term-mcap">SYNCING...</span></div>
+                                <div class="text-xs text-[#E5A93B] mb-1"><span class="opacity-50">></span> LIQUIDITY: <span id="term-liq">SYNCING...</span></div>
+                                <div class="text-xs text-[#E5A93B]"><span class="opacity-50">></span> TARGET_CA: EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-[#E5A93B]/20 pt-4 flex flex-col sm:flex-row justify-between items-center text-xs opacity-60 z-10 gap-2">
+                        <div>SYS_VER: 1.0.0-GW</div>
+                        <div class="flex items-center gap-4">
+                            <a href="https://t.me/generationall_wealth" target="_blank" class="hover:text-[#FFD700] transition-colors underline">TELEGRAM_LINK</a>
+                            <span>|</span>
+                            <a href="https://t.me/generationall_wealth" target="_blank" class="hover:text-[#FFD700] transition-colors underline">COMMUNITY_HUB</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TOKEN / MECHANICS -->
+    <section id="mechanics" class="py-24 bg-meme-gradient text-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-8xl font-meme mb-4">WEALTH PARADIGMS</h2>
+                <p class="text-xl font-bold opacity-90 uppercase tracking-widest">The parameters of the autonomous system
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="glass bg-black/90 p-8 rounded-3xl backdrop-blur-md border-[1px] border-white/20 hover:border-[#E5A93B] hover:bg-black/95 hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-colors transition-shadow duration-300 text-center group text-white">
+                    <div class="transform transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">👑</div>
+                        <h4 class="font-meme text-xl mb-2 text-[#E5A93B]">FOREVER VALUE</h4>
+                        <p class="text-sm opacity-90 text-gray-300">Built for conviction and patience. $GW focuses on compounding prosperity that outlasts market volatility.</p>
+                    </div>
+                </div>
+                <div
+                    class="glass bg-black/90 p-8 rounded-3xl backdrop-blur-md border-[1px] border-white/20 hover:border-[#FFD700] hover:bg-black/95 hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-colors transition-shadow duration-300 text-center group text-white">
+                    <div class="transform transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
+                        <h4 class="font-meme text-xl mb-2 text-[#FFD700]">TON CONCURRENCY</h4>
+                        <p class="text-sm opacity-90 text-gray-300">Natively integrated into the high-performance TON blockchain, leveraging Telegram's distribution.</p>
+                    </div>
+                </div>
+                <div
+                    class="glass bg-black/90 p-8 rounded-3xl backdrop-blur-md border-[1px] border-white/20 hover:border-[#E5A93B] hover:bg-black/95 hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-colors transition-shadow duration-300 text-center group text-white">
+                    <div class="transform transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">💎</div>
+                        <h4 class="font-meme text-xl mb-2 text-[#E5A93B]">SOVEREIGN WEALTH</h4>
+                        <p class="text-sm opacity-90 text-gray-300">Designed as a decentralized flag for those who reject hyper-inflation and seek true self-sovereign wealth.</p>
+                    </div>
+                </div>
+                <div
+                    class="glass bg-black/90 p-8 rounded-3xl backdrop-blur-md border-[1px] border-white/20 hover:border-[#FFD700] hover:bg-black/95 hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-colors transition-shadow duration-300 text-center group text-white">
+                    <div class="transform transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">💼</div>
+                        <h4 class="font-meme text-xl mb-2 text-[#FFD700]">ZERO DEV CONTROL</h4>
+                        <p class="text-sm opacity-90 text-gray-300">100% community-owned and run. Initial liquidity is fully locked and the contract has zero administrative overrides.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SHOWCASE -->
+    <section class="py-32 bg-dark relative overflow-hidden" id="gallery">
+        <!-- Dynamic Background Layer -->
+        <div class="absolute inset-0 opacity-20 z-0">
+            <img src="images/gen.jpg" class="w-full h-full object-cover blur-sm scale-110" alt="">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark via-transparent to-dark"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-24">
+                <div class="inline-block px-4 py-1 rounded-full border border-[#E5A93B]/30 bg-[#E5A93B]/10 text-[#E5A93B] text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                    Visual Archive
+                </div>
+                <h2 class="text-5xl md:text-7xl font-meme text-white tracking-widest uppercase mb-6">
+                    <span class="text-[#FFD700]">MOVEMENT</span> ARCHIVES
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#E5A93B] to-transparent mx-auto"></div>
+            </div>
+        </div>
+
+        <!-- Standardized Showcase Slider -->
+        <div class="showcase-outer w-full overflow-hidden pb-32">
+            <div class="swiper showcase-swiper relative">
+                <div class="swiper-wrapper items-center">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide w-[85vw] md:w-[600px]">
+                        <div class="showcase-card relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden group border border-white/10 glass transition-all duration-700">
+                            <img src="images/gen.jpg" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-60"></div>
+                            <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-meme text-white mb-2 uppercase">Legacy Inception</h4>
+                                <p class="text-[#E5A93B] font-bold tracking-widest text-sm uppercase mb-4">THE MOVEMENT</p>
+                                <div class="h-0.5 w-0 group-hover:w-32 bg-[#E5A93B] transition-all duration-700"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="swiper-slide w-[85vw] md:w-[600px]">
+                        <div class="showcase-card relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden group border border-white/10 glass transition-all duration-700">
+                            <img src="images/gen.jpg" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-60"></div>
+                            <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-meme text-white mb-2 uppercase">Conviction Accumulation</h4>
+                                <p class="text-[#FFD700] font-bold tracking-widest text-sm uppercase mb-4">TACTICAL ADVANTAGE</p>
+                                <div class="h-0.5 w-0 group-hover:w-32 bg-[#FFD700] transition-all duration-700"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="swiper-slide w-[85vw] md:w-[600px]">
+                        <div class="showcase-card relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden group border border-white/10 glass transition-all duration-700">
+                            <img src="images/gen.jpg" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" alt="">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-60"></div>
+                            <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-meme text-white mb-2 uppercase">Prosperity Realized</h4>
+                                <p class="text-[#E5A93B] font-bold tracking-widest text-sm uppercase mb-4">MAXIMUM VELOCITY</p>
+                                <div class="h-0.5 w-0 group-hover:w-32 bg-[#E5A93B] transition-all duration-700"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Controls Wrapped in Container -->
+                <div class="container mx-auto px-4 -mt-12 mb-12 relative z-20">
+                    <div class="flex items-center justify-center gap-12">
+                        <div class="showcase-prev w-16 h-16 rounded-full border border-white/20 flex items-center justify-center cursor-pointer transition-all hover:bg-[#E5A93B] hover:text-black hover:border-transparent group">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 transition-transform group-hover:-translate-x-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                            </svg>
+                        </div>
+                        <div class="showcase-pagination !w-auto bottom-auto relative"></div>
+                        <div class="showcase-next w-16 h-16 rounded-full border border-white/20 flex items-center justify-center cursor-pointer transition-all hover:bg-[#E5A93B] hover:text-black hover:border-transparent group">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 transition-transform group-hover:translate-x-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .showcase-swiper {
+                overflow: visible !important;
+            }
+            .showcase-card {
+                transform: scale(0.85);
+                opacity: 0.3;
+                transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+            }
+            .swiper-slide-active .showcase-card {
+                transform: scale(1);
+                opacity: 1;
+                filter: none;
+                box-shadow: 0 0 50px rgba(229, 169, 59, 0.2);
+            }
+            .showcase-pagination .swiper-pagination-bullet {
+                background: white !important;
+                opacity: 0.2;
+                width: 10px;
+                height: 10px;
+                margin: 0 12px !important;
+                transition: all 0.4s ease;
+            }
+            .showcase-pagination .swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #E5A93B !important;
+                width: 45px;
+                border-radius: 5px;
+                box-shadow: 0 0 20px #E5A93B;
+            }
+        </style>
+    </section>
+
+    <!-- 6. ROADMAP / TIMELINE -->
+    <section id="roadmap" class="py-24 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-6xl font-meme text-center mb-20">WEALTH <span class="text-[#FFD700]">TIMELINE</span>
+            </h2>
+            <div class="flex flex-col gap-12 max-w-5xl mx-auto">
+                <div
+                    class="glass rounded-[3rem] border-l-8 border-[#E5A93B] hover:shadow-[0_0_40px_rgba(229,169,59,0.3)] transition-shadow duration-300 group">
+                    <div
+                        class="flex flex-col md:flex-row gap-8 items-center p-10 transform transition-transform duration-300 hover:-translate-y-2">
+                        <div
+                            class="text-7xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
+                            📟</div>
+                        <div>
+                            <h3 class="text-3xl font-meme mb-2 text-[#E5A93B]">PHASE 1: MANIFESTO & INCEPTION</h3>
+                            <p
+                                class="text-lg text-white/80 italic group-hover:text-white transition-colors duration-300">
+                                Deploying the contract on the TON blockchain. Establishing our official social hubs and rallying the initial circle of $GW wealth builders.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="glass rounded-[3rem] border-l-8 border-[#FFD700] ml-0 md:ml-12 hover:shadow-[0_0_40px_rgba(250,204,21,0.3)] transition-shadow duration-300 group">
+                    <div
+                        class="flex flex-col md:flex-row gap-8 items-center p-10 transform transition-transform duration-300 hover:-translate-y-2">
+                        <div
+                            class="text-7xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
+                            ⚡</div>
+                        <div>
+                            <h3 class="text-3xl font-meme mb-2 text-[#FFD700]">PHASE 2: PROSPERITY SCALING</h3>
+                            <p
+                                class="text-lg text-white/80 italic group-hover:text-white transition-colors duration-300">
+                                Adding locked liquidity pools on TON DEXs (Ston.fi & DeDust). Launching marketing initiatives and introducing interactive Telegram web tools.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="glass rounded-[3rem] border-l-8 border-[#E5A93B] ml-0 md:ml-24 hover:shadow-[0_0_40px_rgba(229,169,59,0.3)] transition-shadow duration-300 group">
+                    <div
+                        class="flex flex-col md:flex-row gap-8 items-center p-10 transform transition-transform duration-300 hover:-translate-y-2">
+                        <div
+                            class="text-7xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
+                            🪐</div>
+                        <div>
+                            <h3 class="text-3xl font-meme mb-2 text-[#E5A93B]">PHASE 3: LEGACY DOMINANCE</h3>
+                            <p
+                                class="text-lg text-white/80 italic group-hover:text-white transition-colors duration-300">
+                                Establishing long-term integrations, scaling utility for holders, and securing global partnerships to cement $GW as the premier wealth-meme symbol.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CORE DIRECTIVES (PRINCIPLES) -->
+    <section class="py-24 bg-[#E5A93B] text-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-meme text-center mb-12 uppercase">CORE MANIFESTO</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div
+                    class="bg-black p-8 rounded-2xl border-4 border-white rotate-1 hover:-translate-y-3 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 group text-white">
+                    <h4 class="text-xl font-black mb-4 uppercase group-hover:text-[#E5A93B] transition-colors">PROSPERITY</h4>
+                    <p class="text-sm font-bold opacity-60 md:opacity-100 md:text-gray-300">Focusing on long-term compound growth. We reject short-term volatile trends to build real, lasting legacy assets.</p>
+                </div>
+                <div
+                    class="bg-black p-8 rounded-2xl border-4 border-white -rotate-1 hover:-translate-y-3 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 group text-white">
+                    <h4 class="text-xl font-black mb-4 uppercase group-hover:text-[#E5A93B] transition-colors">SOVEREIGNTY</h4>
+                    <p class="text-sm font-bold opacity-60 md:opacity-100 md:text-gray-300">No developer controls, no administrative overrides. The contract belongs entirely to the TON community ledger.</p>
+                </div>
+                <div
+                    class="bg-black p-8 rounded-2xl border-4 border-white rotate-2 hover:-translate-y-3 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 group text-white">
+                    <h4 class="text-xl font-black mb-4 uppercase group-hover:text-[#E5A93B] transition-colors">ENDURANCE</h4>
+                    <p class="text-sm font-bold opacity-60 md:opacity-100 md:text-gray-300">Built to survive market cycles. Every holding forms a node of conviction, cementing our path to financial freedom.</p>
+                </div>
+            </div>
+            <p class="text-center mt-10 text-xs font-bold opacity-70 uppercase tracking-widest">GENERATIONAL WEALTH PROTOCOL ESTABLISHED</p>
+        </div>
+    </section>
+
+    <!-- 8. ACTIVATION GUIDE -->
+    <section id="buy" class="py-24 bg-dark">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-5xl font-meme text-center mb-16 underline decoration-[#FFD700]">MOVEMENT ACQUISITION ($GW)</h2>
+            <div class="space-y-6">
+                <!-- Contract Address Box -->
+                <div
+                    class="glass flex flex-col items-center justify-center border-[#E5A93B] p-8 rounded-3xl mb-8 group hover:shadow-[0_0_30px_rgba(229,169,59,0.3)] transition-shadow">
+                    <h4 class="text-2xl font-meme mb-3 text-[#E5A93B]">OFFICIAL CONTRACT ADDRESS</h4>
+                    <pre class="bg-black/50 p-4 rounded-xl text-[#E5A93B] font-bold break-all whitespace-pre-wrap text-center select-all cursor-pointer hover:bg-[#E5A93B] hover:text-black transition-colors w-full"
+                        onclick="navigator.clipboard.writeText('EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo'); alert('Contract Address copied to clipboard!');">EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo</pre>
+                    <p class="text-xs opacity-50 mt-3">(Click to copy the CA)</p>
+                </div>
+
+                <div
+                    class="glass flex gap-6 items-start group hover:bg-white/5 hover:border-[#E5A93B] hover:shadow-[0_0_30px_rgba(229,169,59,0.2)] border border-white/5 transition-colors transition-shadow duration-300 p-8 rounded-3xl">
+                    <div
+                        class="bg-[#E5A93B] text-black w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center font-meme text-2xl group-hover:rotate-6 group-hover:scale-110 shadow-lg transition-transform duration-300">
+                        1</div>
+                    <div>
+                        <h4 class="text-2xl font-meme mb-2 group-hover:text-[#E5A93B] transition-colors duration-300 text-white">
+                            CREATE TON WALLET</h4>
+                        <p class="text-white/70 group-hover:text-white transition-colors duration-300">Download Tonkeeper, Tonhub, or use the Wallet inside Telegram. Secure your recovery phrase.</p>
+                    </div>
+                </div>
+                <div
+                    class="glass flex gap-6 items-start group hover:bg-white/5 hover:border-[#FFD700] hover:shadow-[0_0_30px_rgba(250,204,21,0.2)] border border-white/5 transition-colors transition-shadow duration-300 p-8 rounded-3xl">
+                    <div
+                        class="bg-[#FFD700] text-black w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center font-meme text-2xl group-hover:-rotate-6 group-hover:scale-110 shadow-lg transition-transform duration-300">
+                        2</div>
+                    <div>
+                        <h4 class="text-2xl font-meme mb-2 group-hover:text-[#FFD700] transition-colors duration-300 text-white">
+                            ACQUIRE TON</h4>
+                        <p class="text-white/70 group-hover:text-white transition-colors duration-300">Purchase TON on any major exchange or via P2P, then transfer it directly to your non-custodial wallet.</p>
+                    </div>
+                </div>
+                <div
+                    class="glass flex gap-6 items-start group hover:bg-white/5 hover:border-[#E5A93B] hover:shadow-[0_0_30px_rgba(229,169,59,0.2)] border border-white/5 transition-colors transition-shadow duration-300 p-8 rounded-3xl">
+                    <div
+                        class="bg-[#E5A93B] text-black w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center font-meme text-2xl group-hover:rotate-12 group-hover:scale-110 shadow-lg transition-transform duration-300">
+                        3</div>
+                    <div>
+                        <h4 class="text-2xl font-meme mb-2 group-hover:text-[#E5A93B] transition-colors duration-300 text-white">
+                            EXECUTE SWAP</h4>
+                        <p class="text-white/70 group-hover:text-white transition-colors duration-300">Connect your wallet to Ston.fi or DeDust, import the contract address, and swap your TON for $GW.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="py-24 bg-dark border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-4xl font-meme text-center mb-12 uppercase">TACTICAL INTEL (FAQ)</h2>
+            <div class="space-y-4">
+                <details
+                    class="group glass rounded-[2rem] p-8 cursor-pointer open:bg-white open:text-black transition-colors duration-300">
+                    <summary class="font-meme text-xl flex justify-between items-center list-none">
+                        WHAT IS GENERATIONAL WEALTH ($GW)?
+                        <span class="text-[#E5A93B] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="mt-4 font-bold opacity-80"
+                        data-typewriter="Generational Wealth is more than a token, it's a movement for those who believe in long-term prosperity, financial freedom, and creating wealth that lasts beyond a lifetime.">
+                    </div>
+                </details>
+                <details
+                    class="group glass rounded-[2rem] p-8 cursor-pointer open:bg-white open:text-black transition-colors duration-300">
+                    <summary class="font-meme text-xl flex justify-between items-center list-none">
+                        WHO RUNS THE MOVEMENT?
+                        <span class="text-[#E5A93B] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="mt-4 font-bold opacity-80"
+                        data-typewriter="No developers or institutions control $GW. The contract is fully decentralized and liquidity is locked on the TON blockchain, meaning the movement is powered entirely by its holders.">
+                    </div>
+                </details>
+                <details
+                    class="group glass rounded-[2rem] p-8 cursor-pointer open:bg-white open:text-black transition-colors duration-300">
+                    <summary class="font-meme text-xl flex justify-between items-center list-none">
+                        WHY CHOOSE THE TON CHAIN?
+                        <span class="text-[#FFD700] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="mt-4 font-bold opacity-80"
+                        data-typewriter="TON offers unmatched execution speeds, ultra-low gas fees, and is natively integrated with Telegram, providing the perfect vehicle for scaling a global wealth movement.">
+                    </div>
+                </details>
+                <details
+                    class="group glass rounded-[2rem] p-8 cursor-pointer open:bg-white open:text-black transition-colors duration-300">
+                    <summary class="font-meme text-xl flex justify-between items-center list-none">
+                        HOW AND WHEN DO I JOIN?
+                        <span class="text-[#FFD700] group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="mt-4 font-bold opacity-80"
+                        data-typewriter="The token contract address is live: EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo. Join our official <a href='https://t.me/generationall_wealth' target='_blank' class='text-[#E5A93B] underline'>Telegram Channel</a> to stay updated.">
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FINAL CTA STRIP -->
+    <section class="py-20 bg-black overflow-hidden relative border-t border-b border-[#E5A93B]/20">
+        <div class="absolute inset-0 opacity-10 animate-pulse bg-meme-gradient"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl md:text-8xl font-meme mb-10 italic">SECURE YOUR LEGACY OR GET LEFT BEHIND.</h2>
+            <a href="https://t.me/generationall_wealth" target="_blank">
+                <button
+                    class="bg-white text-black px-16 py-8 rounded-[2rem] font-meme text-3xl hover:bg-[#E5A93B] hover:text-black hover:scale-110 transition-all shadow-[0_0_50px_rgba(229,169,59,0.4)]">
+                    JOIN THE MOVEMENT 👑
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="pt-24 pb-12 bg-dark border-t border-white/10 relative overflow-hidden">
+        <div
+            class="absolute -top-1/3 -left-1/3 w-[800px] h-[800px] bg-[#E5A93B]/05 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="grid md:grid-cols-4 gap-12 text-center md:text-left items-center md:items-start border-b border-white/10 pb-12 mb-12">
+
+                <div class="md:col-span-1 flex flex-col items-center md:items-start">
+                    <img src="images/gen.jpg" alt="GENERATIONAL WEALTH Footer Logo"
+                        class="w-24 h-24 rounded-full border border-[#E5A93B]/50 shadow-[0_0_25px_rgba(229,169,59,0.4)] mb-6 pulse-glow object-cover">
+                    <div
+                        class="text-4xl font-meme bg-clip-text text-transparent bg-gradient-to-r from-[#E5A93B] to-[#FFD700] mb-2">
+                        GEN WEALTH</div>
+                    <p class="text-sm opacity-50 font-bold uppercase tracking-widest italic">THE WEALTH MANIFESTO 👑
+                    </p>
+                </div>
+
+                <div class="md:col-span-1">
+                    <h5
+                        class="font-meme text-lg text-[#E5A93B] mb-6 underline underline-offset-4 decoration-[#FFD700]">PROTOCOL SYSTEM</h5>
+                    <ul class="space-y-4 font-bold text-sm tracking-wider uppercase">
+                        <li><a href="#about" class="hover:text-[#E5A93B] transition-colors">Lore</a></li>
+                        <li><a href="#chart" class="hover:text-[#E5A93B] transition-colors">Status</a></li>
+                        <li><a href="#mechanics" class="hover:text-[#E5A93B] transition-colors">Specs</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-1">
+                    <h5
+                        class="font-meme text-lg text-[#E5A93B] mb-6 underline underline-offset-4 decoration-[#FFD700]">NETWORK COMS</h5>
+                    <ul class="space-y-4 font-bold text-sm tracking-wider uppercase">
+                        <li><a href="https://t.me/generationall_wealth" target="_blank" class="hover:text-[#E5A93B] transition-colors">Telegram Chat</a></li>
+                        <li><a href="https://t.me/generationall_wealth" target="_blank" class="hover:text-[#E5A93B] transition-colors">Telegram Channel</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-1">
+                    <h5
+                        class="font-meme text-lg text-[#E5A93B] mb-6 underline underline-offset-4 decoration-[#FFD700]">SECURED ASSET</h5>
+                    <p class="text-xs text-gray-400 font-bold uppercase leading-relaxed">
+                        The contract address is EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo. Disregard any contract addresses posted outside the official channels.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider text-center md:text-left">
+                    &copy; 2026 GENERATIONAL WEALTH. ALL RIGHTS RESERVED.
+                </p>
+                <p class="text-[10px] text-gray-600 font-bold uppercase tracking-wider text-center max-w-md md:text-right leading-relaxed">
+                    Disclaimer: GENERATIONAL WEALTH ($GW) is an autonomous community-driven protocol on the TON blockchain. Memes are not financial advice. Trade responsibly and secure your keys.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" class="max-w-[90%] max-h-[85vh] rounded-3xl border-4 border-white/10" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const systemTimeEl = document.getElementById('system-time');
+            
+            // Set dynamic system time formatted nicely
+            if (systemTimeEl) {
+                const now = new Date();
+                systemTimeEl.innerText = now.getUTCFullYear() + '-' + 
+                    String(now.getUTCMonth() + 1).padStart(2, '0') + '-' + 
+                    String(now.getUTCDate()).padStart(2, '0') + ' ' + 
+                    String(now.getUTCHours()).padStart(2, '0') + ':' + 
+                    String(now.getUTCMinutes()).padStart(2, '0') + ':' + 
+                    String(now.getUTCSeconds()).padStart(2, '0') + ' UTC';
+            }
+
+            // GSAP Animations on Load
+            gsap.to("#preloader-text", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power4.out"
+            });
+
+            // Fade out preloader
+            setTimeout(() => {
+                preloader.classList.add('opacity-0', 'pointer-events-none');
+                // Body reveal
+                gsap.from("nav", { y: -100, opacity: 0, duration: 1, ease: "power4.out" });
+                gsap.from("section", { opacity: 0, y: 50, duration: 1, stagger: 0.2, ease: "power4.out" });
+            }, 2000);
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu(show) {
+            if (show) {
+                menu.classList.remove('hidden');
+                setTimeout(() => {
+                    menu.classList.add('flex');
+                    menu.classList.remove('opacity-0');
+                    menu.classList.add('opacity-100');
+                }, 10);
+            } else {
+                menu.classList.remove('opacity-100');
+                menu.classList.add('opacity-0');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                }, 500);
+            }
+        }
+
+        menuBtn.addEventListener('click', () => toggleMenu(true));
+        menuClose.addEventListener('click', () => toggleMenu(false));
+        menuLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
+        // Swiper Initialization
+        const swiper = new Swiper('.showcase-swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.showcase-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.showcase-next',
+                prevEl: '.showcase-prev',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Typewriter Effect for FAQ
+        const typewriters = document.querySelectorAll('[data-typewriter]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const text = entry.target.getAttribute('data-typewriter');
+                    entry.target.innerHTML = '';
+                    let i = 0;
+                    const interval = setInterval(() => {
+                        if (i < text.length) {
+                            entry.target.innerHTML += text.charAt(i);
+                            i++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 20);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        typewriters.forEach(t => observer.observe(t));
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.style.display = 'flex';
+            setTimeout(() => lb.classList.add('opacity-100'), 10);
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.style.display = 'none';
+        }
+
+        // Tab Switcher Logic
+        const tabChartBtn = document.getElementById('tab-chart-btn');
+        const tabTerminalBtn = document.getElementById('tab-terminal-btn');
+        const chartPanel = document.getElementById('chart-panel');
+        const terminalPanel = document.getElementById('terminal-panel');
+
+        if (tabChartBtn && tabTerminalBtn && chartPanel && terminalPanel) {
+            tabChartBtn.addEventListener('click', () => {
+                chartPanel.classList.remove('hidden');
+                terminalPanel.classList.add('hidden');
+                
+                tabChartBtn.classList.add('bg-[#E5A93B]', 'text-black');
+                tabChartBtn.classList.remove('text-[#E5A93B]');
+                
+                tabTerminalBtn.classList.remove('bg-[#E5A93B]', 'text-black');
+                tabTerminalBtn.classList.add('text-[#E5A93B]');
+            });
+
+            tabTerminalBtn.addEventListener('click', () => {
+                chartPanel.classList.add('hidden');
+                terminalPanel.classList.remove('hidden');
+                terminalPanel.classList.add('flex');
+                
+                tabTerminalBtn.classList.add('bg-[#E5A93B]', 'text-black');
+                tabTerminalBtn.classList.remove('text-[#E5A93B]');
+                
+                tabChartBtn.classList.remove('bg-[#E5A93B]', 'text-black');
+                tabChartBtn.classList.add('text-[#E5A93B]');
+            });
+        }
+
+        // Fetch Live Stats from Dexscreener
+        async function fetchStats() {
+            try {
+                const response = await fetch('https://api.dexscreener.com/latest/dex/tokens/EQA69EB5TreoR3Kf3rm0gjHtdbvIejQUDabrPglnFXji8uAo');
+                const data = await response.json();
+                
+                if (data.pairs && data.pairs.length > 0) {
+                    const pair = data.pairs[0];
+                    const price = parseFloat(pair.priceUsd);
+                    const fdv = parseFloat(pair.fdv || pair.marketCap);
+                    const liquidity = parseFloat(pair.liquidity?.usd);
+                    const volume = parseFloat(pair.volume?.h24);
+
+                    const formatPriceValue = (p) => {
+                        if (isNaN(p) || p === 0) return 'SYNCING...';
+                        if (p < 0.00001) return '$' + p.toFixed(8);
+                        if (p < 0.001) return '$' + p.toFixed(6);
+                        if (p < 1) return '$' + p.toFixed(4);
+                        return '$' + p.toFixed(2);
+                    };
+
+                    const formatNumValue = (n) => {
+                        if (isNaN(n) || !n || n === 0) return 'SYNCING...';
+                        if (n >= 1000000) return '$' + (n / 1000000).toFixed(2) + 'M';
+                        if (n >= 1000) return '$' + (n / 1000).toFixed(2) + 'K';
+                        return '$' + n.toFixed(2);
+                    };
+
+                    // Update Top Stats Grid
+                    document.getElementById('stat-mcap').innerText = formatNumValue(fdv);
+                    document.getElementById('stat-price').innerText = formatPriceValue(price);
+                    document.getElementById('stat-liquidity').innerText = formatNumValue(liquidity);
+                    document.getElementById('stat-volume').innerText = formatNumValue(volume);
+
+                    // Update Terminal Stats
+                    const termPrice = document.getElementById('term-price');
+                    const termMcap = document.getElementById('term-mcap');
+                    const termLiq = document.getElementById('term-liq');
+                    if (termPrice) termPrice.innerText = formatPriceValue(price);
+                    if (termMcap) termMcap.innerText = formatNumValue(fdv);
+                    if (termLiq) termLiq.innerText = formatNumValue(liquidity);
+                } else {
+                    console.log('No pairs found on Dexscreener API.');
+                }
+            } catch (e) {
+                console.error('Error fetching stats from Dexscreener:', e);
+            }
+        }
+        
+        fetchStats();
+        setInterval(fetchStats, 30000);
+    </script>
+</body>
+
+</html>
